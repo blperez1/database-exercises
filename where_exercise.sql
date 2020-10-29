@@ -33,8 +33,13 @@ WHERE birth_date like '%-12-25';
 
 SELECT *
 FROM employees
-WHERE birth_date like '%-12-25' AND hire_date BETWEEN 1990 AND 1999;
+WHERE hire_date BETWEEN '1990-01-01'
+AND '1999-12-31' AND birth_date like '%-12-25';
 
 SELECT first_name, last_name
 FROM employees
 WHERE last_name like '%q%';
+
+SELECT first_name, last_name
+FROM employees
+WHERE last_name like '%q%' AND NOT LIKE '%qu%';
